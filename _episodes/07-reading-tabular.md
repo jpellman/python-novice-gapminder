@@ -23,9 +23,11 @@ keypoints:
     *   A 2-dimenstional table whose columns have names
         and potentially have different data types.
 *   Load it with `import pandas`.
-*   Read a Comma Separate Values (CSV) data file with `pandas.read_csv`.
+*   Read a Comma Separated Values (CSV) data file with `pandas.read_csv`.
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
+
+TODO: Maybe discuss alternative delimiters here.
 
 ~~~
 import pandas
@@ -101,6 +103,8 @@ New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 {: .output}
 
 ## Use `DataFrame.info` to find out more about a dataframe.
+
+TODO: Explain how variables can sometimes have functions attached to them.
 
 ~~~
 data.info()

@@ -119,6 +119,8 @@ Age in three years: 45
 ~~~
 {: .output}
 
+TODO: Were primitive data types introduced yet?  How can you discuss strings without introducing them?
+
 ## Use an index to get a single character from a string.
 
 *   The characters (individual letters, numbers, and so on) in a string are
@@ -139,6 +141,8 @@ print(atom_name[0])
 h
 ~~~
 {: .output}
+
+TODO: What the hell is with these lesson plans not mentioning the difference between zero and one indexing?  That's a *huge* source of confusion to newbies.
 
 ## Use a slice to get a substring.
 

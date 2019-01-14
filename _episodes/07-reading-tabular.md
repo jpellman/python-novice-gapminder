@@ -26,8 +26,8 @@ keypoints:
 *   Read a Comma Separated Values (CSV) data file with `pandas.read_csv`.
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
+    *   `pandas.read_csv` also allows for you to import data that uses delimiters other than commas (e.g., semicolon or tab-delimited data).
 
-TODO: Maybe discuss alternative delimiters here.
 
 ~~~
 import pandas
@@ -104,7 +104,9 @@ New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 
 ## Use `DataFrame.info` to find out more about a dataframe.
 
-TODO: Explain how variables can sometimes have functions attached to them.
+Sometimes variables can contain functions.  Similar to how functions and constants can be imported using libraries,
+functions attached to variables can be accessed using the `.` (belongs to) character.  The variable we just loaded
+the CSV data into has an `info` function attached to it that can tell us more about our data.
 
 ~~~
 data.info()

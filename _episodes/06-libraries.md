@@ -25,7 +25,6 @@ keypoints:
 *   The Python [standard library][stdlib] is an extensive suite of modules that comes
     with Python itself.
 *   Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
-*   We will see later how to write new libraries. (TODO: Will we? Or is this just a wish list item that the authors put in here?)
 
 > ## Libraries and modules
 >
@@ -38,7 +37,7 @@ keypoints:
 ## A program must import a library module before using it.
 
 *   Use `import` to load a library module into a program's memory.
-*   Then refer to things from the module as `module_name.thing_name`. (TODO: Where thing_name is a function or a constant.
+*   Then refer to things from the module as `module_name.thing_name`. `thing_name` can either be a function or a useful constant value stored (such as pi).
     *   Python uses `.` to mean "part of".
 *   Using `math`, one of the modules in the standard library:
 

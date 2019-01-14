@@ -24,8 +24,12 @@ keypoints:
 *   **Variables** are names for values.
 *   In Python the `=` symbol assigns the value on the right to the name on the left.
 *   The variable is created when a value is assigned to it.
-*   Here, Python assigns an age to a variable `age`
-    and a name in quotes to a variable `first_name`.
+*   Variables can hold different types of data. Three common ones are:
+    * integer numbers
+    * floating point numbers (decimal values with varying levels of precision), and
+    * strings (text; the term "string" is short for "string of characters").
+*   Here, Python assigns an age (as an integer value) to a variable `age`
+    and a name (as a string) in quotes to a variable `first_name`.
 
 ~~~
 age = 42
@@ -41,7 +45,7 @@ first_name = 'Ahmed'
 
 ## Use `print` to display values.
 
-*   Python has a built-in function called `print` that prints things as text.
+*   Python has a built-in function called `print` that prints data as text.
 *   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
 *   To add a string to the printout, wrap the string in single or double quotes.
@@ -119,8 +123,6 @@ Age in three years: 45
 ~~~
 {: .output}
 
-TODO: Were primitive data types introduced yet?  How can you discuss strings without introducing them?
-
 ## Use an index to get a single character from a string.
 
 *   The characters (individual letters, numbers, and so on) in a string are
@@ -128,7 +130,7 @@ TODO: Were primitive data types introduced yet?  How can you discuss strings wit
     this ordering, we can treat the string as a list of characters.
 *   Each position in the string (first, second, etc.) is given a number. This
     number is called an **index** or sometimes a subscript.
-*   Indices are numbered from 0.
+*   Indices are numbered from 0 in Python.  Other programming languages, such as MATLAB, often begin at 1.
 *   Use the position's index in square brackets to get the character at that
     position.
 
@@ -141,8 +143,6 @@ print(atom_name[0])
 h
 ~~~
 {: .output}
-
-TODO: What the hell is with these lesson plans not mentioning the difference between zero and one indexing?  That's a *huge* source of confusion to newbies.
 
 ## Use a slice to get a substring.
 

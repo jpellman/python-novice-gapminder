@@ -20,7 +20,7 @@ keypoints:
 
 *   Pandas is a widely-used Python library for statistics, particularly on tabular data.
 *   Borrows many features from R's dataframes.
-    *   A 2-dimenstional table whose columns have names
+    *   A 2-dimensional table whose columns have names
         and potentially have different data types.
 *   Load it with `import pandas`.
 *   Read a Comma Separated Values (CSV) data file with `pandas.read_csv`.
@@ -57,6 +57,7 @@ print(data)
 
 *   The columns in a dataframe are the observed variables, and the rows are the observations.
 *   Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
+*   If you do not use the `print` command and only type `data`, Jupyter will render the table in a more aesthetically pleasing way.
 
 > ## File Not Found
 >

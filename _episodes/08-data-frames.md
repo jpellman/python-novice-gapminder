@@ -245,7 +245,7 @@ max      13450.401510    16361.876470    18965.055510
 ## Select-Apply-Combine operations
 
 Pandas vectorizing methods and grouping operations are features that provide users 
-much flexibility to analyse their data.
+much flexibility to analyze their data.
 
 For instance, let's say we want to have a clearer view on how the European countries 
 split themselves according to their GDP.

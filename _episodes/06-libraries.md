@@ -219,7 +219,7 @@ cos(pi) is -1.0
 > bases="ACTTGCTTGAC"
 > import math
 > import random
-> ___ = random.randrange(n_bases)
+> ___ = random.randrange(___))
 > ___ = len(bases)
 > print("random base ", bases[___], "base index", ___)
 > ~~~
@@ -280,7 +280,7 @@ cos(pi) is -1.0
 > > ~~~
 > > {: .python}
 > >
-> > can bewritten as
+> > can be written as
 > >
 > > ~~~
 > > import math

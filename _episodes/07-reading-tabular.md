@@ -22,20 +22,20 @@ keypoints:
 *   Borrows many features from R's dataframes.
     *   A 2-dimensional table whose columns have names
         and potentially have different data types.
-*   Load it with `import pandas`.
-*   Read a Comma Separated Values (CSV) data file with `pandas.read_csv`.
+*   Load it with `import pandas as pd`. The alias pd is commonly used for Pandas.
+*   Read a Comma Separate Values (CSV) data file with `pd.read_csv`.
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
     *   `pandas.read_csv` also allows for you to import data that uses delimiters other than commas (e.g., semicolon or tab-delimited data).
 
 
 ~~~
-import pandas
+import pandas as pd
 
-data = pandas.read_csv('data/gapminder_gdp_oceania.csv')
+data = pd.read_csv('data/gapminder_gdp_oceania.csv')
 print(data)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
        country  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
 0    Australia     10039.59564     10949.64959     12217.22686
@@ -65,7 +65,7 @@ print(data)
 > which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
 > If you forget to include `data/`,
 > or if you include it but your copy of the file is somewhere else,
-> you will get a [runtime error]({{ page.root }}/05-error-messages/)
+> you will get a [runtime error]({{ page.root }}/04-built-in/#runtime-error)
 > that ends with a line like this:
 >
 > ~~~
@@ -81,10 +81,10 @@ print(data)
 *   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
 
 ~~~
-data = pandas.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
+data = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
 print(data)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
              gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
 country
@@ -112,7 +112,7 @@ the CSV data into has an `info` function attached to it that can tell us more ab
 ~~~
 data.info()
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 <class 'pandas.core.frame.DataFrame'>
 Index: 2 entries, Australia to New Zealand
@@ -150,7 +150,7 @@ memory usage: 208.0+ bytes
 ~~~
 print(data.columns)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
        'gdpPercap_1972', 'gdpPercap_1977', 'gdpPercap_1982', 'gdpPercap_1987',
@@ -168,7 +168,7 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
 ~~~
 print(data.T)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 country           Australia  New Zealand
 gdpPercap_1952  10039.59564  10556.57566
@@ -193,7 +193,7 @@ All other columns are ignored, unless you use the argument `include='all'`.
 ~~~
 print(data.describe())
 ~~~
-{: .python}
+{: .language-python}
 ~~~
        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
 count        2.000000        2.000000        2.000000        2.000000
@@ -238,12 +238,12 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > and display its summary statistics.
 >
 > > ## Solution
-> > To read in a CSV, we use `pandas.read_csv` and pass the filename 'data/gapminder_gdp_americas.csv' to it. We also once again pass the
+> > To read in a CSV, we use `pd.read_csv` and pass the filename 'data/gapminder_gdp_americas.csv' to it. We also once again pass the
 > > column name 'country' to the parameter `index_col` in order to index by country:
 > > ~~~
-> > americas = pandas.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
+> > americas = pd.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -267,7 +267,7 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > > ~~~
 > > americas.head(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > 
 > > The output is then
 > > ~~~
@@ -304,13 +304,13 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > > ~~~
 > > americas_flipped = americas.T
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > >
 > > We can then view the last three columns of `americas` by viewing the last three rows of `americas_flipped`:
 > > ~~~
 > > americas_flipped.tail(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > The output is then
 > > ~~~
 > > country        Argentina  Bolivia   Brazil   Canada    Chile Colombia  \
@@ -338,7 +338,7 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > > ~~~
 > > americas.T.tail(n=3)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -361,13 +361,13 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
 > 
 > > ## Solution
-> > We need to specify the path to the file of interest in the call to `pandas.read_csv`. We first need to 'jump' out of
+> > We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
 > > the folder `thesis` using '../' and then into the folder `field_data` using 'field_data/'. Then we can specify the filename `microbes.csv.
 > > The result is as follows:
 > > ~~~
-> > data_microbes = pandas.read_csv('../field_data/microbes.csv')
+> > data_microbes = pd.read_csv('../field_data/microbes.csv')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > {: .solution}
 {: .challenge}
 
@@ -383,12 +383,12 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 > > ~~~
 > > americas.to_csv('processed.csv')
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > For help on `to_csv`, you could execute, for example,
 > > ~~~
 > > help(americas.to_csv)
 > > ~~~
-> >{: .python}
+> >{: .language-python}
 > > Note that `help(to_csv)` throws an error! This is a subtlety and is due to the fact that `to_csv` is NOT a function in 
 > > and of itself and the actual call is `americas.to_csv`. 
 > > 

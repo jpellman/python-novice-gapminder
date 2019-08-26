@@ -47,7 +47,7 @@ import math
 print('pi is', math.pi)
 print('cos(pi) is', math.cos(math.pi))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 pi is 3.141592653589793
 cos(pi) is -1.0
@@ -65,7 +65,7 @@ cos(pi) is -1.0
 ~~~
 help(math)
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 Help on module math:
 
@@ -73,7 +73,7 @@ NAME
     math
 
 MODULE REFERENCE
-    http://docs.python.org/3.5/library/math
+    http://docs.python.org/3/library/math
 
     The following documentation is automatically generated from the Python
     source files.  It may be incomplete, incorrect or include features that
@@ -86,9 +86,7 @@ DESCRIPTION
     mathematical functions defined by the C standard.
 
 FUNCTIONS
-    acos(...)
-        acos(x)
-
+    acos(x, /)
         Return the arc cosine (measured in radians) of x.
 ⋮ ⋮ ⋮
 ~~~
@@ -104,7 +102,7 @@ from math import cos, pi
 
 print('cos(pi) is', cos(pi))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 cos(pi) is -1.0
 ~~~
@@ -120,7 +118,7 @@ import math as m
 
 print('cos(pi) is', m.cos(m.pi))
 ~~~
-{: .python}
+{: .language-python}
 ~~~
 cos(pi) is -1.0
 ~~~
@@ -158,7 +156,7 @@ cos(pi) is -1.0
 > ~~~
 > bases = 'ACTTGCTTGAC'
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > 1. Which [standard library][stdlib] module could help you?
 > 2. Which function would you select from that module? Are there alternatives?
@@ -166,7 +164,7 @@ cos(pi) is -1.0
 >
 > > ## Solution
 > >
-> > The [random module](randommod) seems like it could help you.
+> > The [random module][randommod] seems like it could help you.
 > >
 > > The string has 11 characters, each having a positional index from 0 to 10.
 > > You could use `random.randrange` function (or the alias `random.randint`
@@ -179,7 +177,7 @@ cos(pi) is -1.0
 > > random_index = randrange(len(bases))
 > > print(bases[random_index])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > or more compactly:
 > >
@@ -188,7 +186,7 @@ cos(pi) is -1.0
 > >
 > > print(bases[randrange(len(bases))])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > Perhaps you found the `random.sample` function? It allows for slightly
 > > less typing:
@@ -198,10 +196,10 @@ cos(pi) is -1.0
 > >
 > > print(sample(bases, 1)[0])
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > Note that this function returns a list of values. We will learn about
-> > lists in episode 11.
+> > lists in [episode 11]({% link _episodes/11-lists.md %}).
 > >
 > > There's also other functions you could use, but with more convoluted
 > > code as a result.
@@ -223,7 +221,7 @@ cos(pi) is -1.0
 > ___ = len(bases)
 > print("random base ", bases[___], "base index", ___)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -235,7 +233,7 @@ cos(pi) is -1.0
 > > idx = random.randrange(n_bases)
 > > print("random base", bases[idx], "base index", idx)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > {: .solution}
 {: .challenge}
@@ -269,7 +267,7 @@ cos(pi) is -1.0
 > angle = ____.degrees(____.pi / 2)
 > print(____)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -278,7 +276,7 @@ cos(pi) is -1.0
 > > angle = m.degrees(m.pi / 2)
 > > print(angle)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > can be written as
 > >
@@ -287,7 +285,7 @@ cos(pi) is -1.0
 > > angle = math.degrees(math.pi / 2)
 > > print(angle)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > Since you just wrote the code and are familiar with it, you might actually
 > > find the first version easier to read. But when trying to read a huge piece
@@ -303,13 +301,13 @@ cos(pi) is -1.0
 >
 > Print commands:
 >
-> 1. `print("sin(pi/2) =",sin(pi/2))`
-> 2. `print("sin(pi/2) =",m.sin(m.pi/2))`
-> 3. `print("sin(pi/2) =",math.sin(math.pi/2))`
+> 1. `print("sin(pi/2) =", sin(pi/2))`
+> 2. `print("sin(pi/2) =", m.sin(m.pi/2))`
+> 3. `print("sin(pi/2) =", math.sin(math.pi/2))`
 >
 > Library calls:
 >
-> 1. `from math import sin,pi`
+> 1. `from math import sin, pi`
 > 2. `import math`
 > 3. `import math as m`
 > 4. `from math import *`
@@ -340,7 +338,7 @@ cos(pi) is -1.0
 > angle = degrees(pi / 2)
 > print(angle)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >
@@ -349,7 +347,7 @@ cos(pi) is -1.0
 > > angle = degrees(pi / 2)
 > > print(angle)
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > Most likely you find this version easier to read since it's less dense.
 > > The main reason not to use this form of import is to avoid name clashes.
@@ -368,7 +366,7 @@ cos(pi) is -1.0
 > from math import log
 > log(0)
 > ~~~
-> {: .python}
+> {: .language-python}
 >
 > > ## Solution
 > >

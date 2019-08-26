@@ -39,11 +39,15 @@ installed the Anaconda Python distribution, see [the setup instructions]({{ page
 for installation instructions.
 
 Even though JupyterLab is a web-based application, JupyterLab runs locally on your machine and 
-does not require an internet connection.  If you need to go back to it, you can do so by entering the URL `http://127.0.0.1:8888/`.
+does not require an internet connection.  If you need to go back to it, you can do so by entering the URL `http://127.0.0.1:8888/` or `http://localhost:8888/`.
+
+The basic principles of how JupyterLab works is as follows:
+
 *   The JupyterLab server sends messages to your web browser.
-*   The JupyterLab server does the work and the web browser renders the result.
-*   You will type code into the browser and see the result when the web page talks to the 
-    JupyterLab server.
+*   When you type code into the browser, the JupyterLab server forwards that code to an application capable of executing the code in some way.  The interface between this application and JupyterLab is referred to as a `kernel`.
+*   Multiple `kernels` are available that allow JupyterLab to work with different languages, such as Julia, Python, R, and even MATLAB.
+*   After the code has been executed by another application, the JupyterLab server sends the result back to your web browser, where it is rendered.
+*   For this workshop, we will only be using JupyterLab with the Python kernel.
 
 > ## JupyterLab? What about Jupyter notebooks?
 > 
@@ -112,7 +116,7 @@ menus are included by default.
 *   **Edit:** Actions related to editing documents and other activities such as *Undo*, *Cut*, *Copy*, *Paste*, etc.
 *   **View:** Actions that alter the appearance of JupyterLab.
 *   **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
-*   **Kernel:** Actions for managing kernels which, as mentioned above, are separate processes for running code.
+*   **Kernel:** Actions for managing kernels which, as mentioned above, are interfaces for multiple languages that that can run code in those languages.
 *   **Tabs:** A list of the open documents and activities in the dock panel.
 *   **Settings:** Common JupyterLab settings can be configured using this menu. There is also an *Advanced Settings Editor* option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
 *   **Help:** A list of JupyterLab and kernel help links.
